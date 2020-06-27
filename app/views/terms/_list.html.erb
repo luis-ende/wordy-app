@@ -1,0 +1,17 @@
+<div class="item-container">
+  <ul class="item-list">
+    <% @terms.each do |term| %>
+      <div class="item">
+        <li class="list-item"><%= term.term_text %></li>
+        <%= link_to edit_category_path(category), class: "complete-btn" do %>
+            <i class="fas fa-edit"></i>
+        <% end %>
+        <%= link_to category_path(category), method: :delete,
+                                             class: "trash-btn",
+                                             data: { confirm: "Are you sure?" } do %>
+            <i class="fas fa-trash"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </ul>
+</div>

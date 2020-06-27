@@ -1,0 +1,9 @@
+<header>
+  <h1>Edit Category</h1>
+</header>
+<%= form_with model: @category do |f| %>
+  <%= f.text_field :name %>
+  <%= f.button :button, type: :submit, class: 'item-button' do %>
+    <i class="fas fa-save"></i>
+  <% end %>
+<% end %>

@@ -1,0 +1,11 @@
+<header>
+  <h1 class="page-header">All Term Categories</h1>
+</header>
+<%= form_with model: @category do |f| %>
+  <%= f.text_field :name %>
+  <%= f.button :button, type: :submit, class: 'item-button' do %>
+    <i class="fas fa-plus-square"></i>
+  <% end %>
+<% end %>
+
+<%= render 'list' %>
