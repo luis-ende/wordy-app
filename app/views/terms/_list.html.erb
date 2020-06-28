@@ -1,17 +1,65 @@
-<div class="item-container">
-  <ul class="item-list">
-    <% @terms.each do |term| %>
-      <div class="item">
-        <li class="list-item"><%= term.term_text %></li>
-        <%= link_to edit_category_path(category), class: "complete-btn" do %>
-            <i class="fas fa-edit"></i>
-        <% end %>
-        <%= link_to category_path(category), method: :delete,
-                                             class: "trash-btn",
-                                             data: { confirm: "Are you sure?" } do %>
-            <i class="fas fa-trash"></i>
-        <% end %>
-      </div>
-    <% end %>
-  </ul>
+<div id="navbar">
+  <a id="defaultOpen" class="tablinks" href="javascript:void(0)"
+     onclick="openCategory(event, 'All')">All</a>
+  <% @category_names.each do |id, name| %>
+    <a class="tablinks" href="javascript:void(0)"
+       onclick="openCategory(event, <%= "'#{name}'" %>)"><%= name %></a>
+  <% end %>
 </div>
+
+<div class="content">
+  <div class="item-container">
+    <ul class="item-list">
+      <% @terms.each do |term| %>
+        <div class="item">
+          <li class="list-item item-category"><%= term.category.name %></li>
+          <li class="list-item"><%= term.term_text %></li>
+          <%= link_to edit_term_path(term), class: "complete-btn" do %>
+              <i class="fas fa-edit"></i>
+          <% end %>
+          <%= link_to term_path(term), method: :delete,
+                                       class: "trash-btn",
+                                       data: { confirm: "Are you sure?" } do %>
+              <i class="fas fa-trash"></i>
+          <% end %>
+          <%= link_to edit_term_path(term), class: "go-btn" do %>
+              <i class="fas fa-arrow-right"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<script type="text/javascript">
+  document.getElementById("defaultOpen").click();
+
+  function openCategory(evt, catName) {
+   // Declare all variables
+   var i, tablinks;
+
+   filterTerms(catName);
+
+   // Get all elements with class="tablinks" and remove the class "active"
+   tablinks = document.getElementsByClassName("tablinks");
+   for (i = 0; i < tablinks.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" active", "");
+   }
+   evt.currentTarget.className += " active";
+  }
+
+  function filterTerms(catName) {
+    itemList = document.querySelector('.item-list');
+    items = itemList.getElementsByClassName('item');
+    for (item = 0; item < items.length; item++) {
+      li = items[item].getElementsByClassName("item-category")[0];
+      txtValue = li.innerText;
+      if (txtValue === catName || catName === "All") {
+        items[item].style.display = "";
+      } else {
+        items[item].style.display = "none";
+      }
+    }
+
+  }
+</script>

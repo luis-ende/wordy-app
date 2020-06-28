@@ -1,12 +1,24 @@
 <header>
-  <h1>All Terms</h1>
+  <h1>Last added terms</h1>
+  <%= link_to terms_path, class: "complete-btn" do %>
+    <i class="fas fa-check-double"></i> Review your vocabulary 
+  <% end %>
 </header>
 
-<%= form_with model: @term do |f| %>
-  <%= f.text_field :term_text %>
-  <%= f.button :button, type: :submit, class: 'item-button' do %>
-    <i class="fas fa-plus-square"></i>
+<div class="header">
+  <%= form_with model: @term do |f| %>
+    <%= f.text_field :term_text %>
+    <div class="select">
+      <%= f.collection_select(:category_id, Category.all, :id, :name,
+                               selected: @default_category_id,
+                               class: 'select') %>
+    </div>
+    <%= f.button :button, type: :submit, class: 'item-button' do %>
+      <i class="fas fa-plus-square"></i>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
-<%= render 'terms/list' %>
+<%= render 'list' %>
+
+<%= javascript_pack_tag 'custom' %>
