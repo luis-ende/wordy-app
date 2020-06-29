@@ -43,6 +43,15 @@ class TermsController < ApplicationController
     @learning_terms = Term.where(learning: true).order('learning_updated DESC')
   end
 
+  def toggle_learning
+    term = Term.find(params[:term_id])
+    term.learning = !term.learning
+    term.learning_updated = DateTime.now
+    term.save
+
+    redirect_back fallback_location: 'terms'
+  end
+
   private
 
   def term_params

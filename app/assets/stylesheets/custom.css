@@ -81,7 +81,9 @@ form button:hove {
 
 .trash-btn,
 .complete-btn,
-.go-btn {
+.go-btn,
+.learning-do-btn,
+.learning-done-btn {
   background: #ff6f47;
   color: white;
   border: none;
@@ -90,12 +92,20 @@ form button:hove {
   font-size: 1rem;
 }
 
-.complete-btn{
+.complete-btn {
   background: rgb(73, 204, 73);
 }
 
-.go-btn{
+.go-btn {
   background: rgb(204, 158, 73);
+}
+
+.learning-done-btn {
+  background: green;
+}
+
+.learning-do-btn {
+  background: red;
 }
 
 .list-item {
@@ -260,4 +270,35 @@ select {
 .grid-item {
   border: 1px;
   padding: 20px;
+}
+
+/* TOOLTIP */
+
+/* Tooltip container */
+.tooltip {
+ position: relative;
+ display: inline-block;
+ border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+ visibility: hidden;
+ width: 120px;
+ background-color: #555;
+ color: #fff;
+ text-align: center;
+ padding: 5px 0;
+ border-radius: 6px;
+
+ /* Position the tooltip text */
+ position: absolute;
+ z-index: 1;
+ bottom: 125%;
+ left: 50%;
+ margin-left: -60px;
+
+ /* Fade in tooltip */
+ opacity: 0;
+ transition: opacity 0.3s;
 }
