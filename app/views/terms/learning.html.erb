@@ -1,0 +1,22 @@
+<header>
+  <h1>Learning words!</h1>
+</header>
+
+<div class="grid-container">
+  <% @learning_terms.each do |lt| %>
+    <div class="grid-item">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+         <div class="flip-card-front">
+           <h3 style="width:300px;height:300px;"><%= lt.term_text %></h3>
+         </div>
+         <div class="flip-card-back">
+           <h1><%= lt.category.name %></h1>
+           <p><%= lt.term_text %></p>
+           <p>We love that word</p>
+         </div>
+        </div>
+        </div>
+    </div>
+  <% end %>
+</div>

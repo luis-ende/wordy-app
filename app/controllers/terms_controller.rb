@@ -39,6 +39,10 @@ class TermsController < ApplicationController
     redirect_to terms_path
   end
 
+  def learning
+    @learning_terms = Term.where(learning: true).order('learning_updated DESC')
+  end
+
   private
 
   def term_params
