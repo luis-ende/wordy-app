@@ -8,12 +8,16 @@
       <div class="flip-card">
         <div class="flip-card-inner">
          <div class="flip-card-front">
-           <h3 style="width:300px;height:300px;"><%= lt.term_text %></h3>
+           <h2 style="width:300px;height:300px;"><%= lt.term_text %></h2>
          </div>
          <div class="flip-card-back">
            <h1><%= lt.category.name %></h1>
            <p><%= lt.term_text %></p>
-           <p>We love that word</p>
+           <%= link_to toggle_term_learning_path(term_id: lt.id),
+                      method: :post, class: 'learning-do-btn' do %>
+             Learned!
+             <i class="fas fa-check-double"></i>
+           <% end %>
          </div>
         </div>
         </div>

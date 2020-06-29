@@ -251,11 +251,23 @@ select {
  color: black;
 }
 
+.flip-card-front h2 {
+  margin: 25px 0 25px 0;
+}
+
 /* Style the back side */
 .flip-card-back {
  background-color: #ff6f47;
  color: white;
  transform: rotateY(180deg);
+}
+
+.flip-card-back h1 {
+  margin-top: 1rem;
+}
+
+.flip-card-back p {
+  padding: 0 1rem 1.5rem 1rem;
 }
 
 /* GRID */
@@ -270,35 +282,4 @@ select {
 .grid-item {
   border: 1px;
   padding: 20px;
-}
-
-/* TOOLTIP */
-
-/* Tooltip container */
-.tooltip {
- position: relative;
- display: inline-block;
- border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-}
-
-/* Tooltip text */
-.tooltip .tooltiptext {
- visibility: hidden;
- width: 120px;
- background-color: #555;
- color: #fff;
- text-align: center;
- padding: 5px 0;
- border-radius: 6px;
-
- /* Position the tooltip text */
- position: absolute;
- z-index: 1;
- bottom: 125%;
- left: 50%;
- margin-left: -60px;
-
- /* Fade in tooltip */
- opacity: 0;
- transition: opacity 0.3s;
 }
