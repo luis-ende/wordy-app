@@ -32,8 +32,10 @@
                                        data: { confirm: "Are you sure?" } do %>
               <i class="fas fa-trash"></i>
           <% end %>
-          <%= link_to edit_term_path(term), class: "go-btn" do %>
-              <i class="fas fa-arrow-right"></i>
+          <%= link_to "https://en.pons.com/translate/german-spanish/#{ term.term_text }",
+              class: "go-btn",
+              target: :_blank do %>
+              <i class="fas fa-globe"></i>
           <% end %>
         </div>
       <% end %>

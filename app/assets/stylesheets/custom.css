@@ -164,6 +164,18 @@ select {
   color: #ff6f47;
 }
 
+.welcome-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-menu div {
+  width: 250px;
+  margin: 25px;
+  text-align: center;
+}
+
 /* STICKY NAVBAR */
 
 .header {

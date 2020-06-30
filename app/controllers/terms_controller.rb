@@ -1,9 +1,9 @@
 class TermsController < ApplicationController
   def index
     @terms = Term.order(created_at: :desc).first(20)
+    @category_names = Category.get_names
     @default_category_id = Category.get_default_category.id
     @term = Term.new
-    @category_names = Category.get_names
   end
 
   def edit
@@ -50,6 +50,11 @@ class TermsController < ApplicationController
     term.save
 
     redirect_back fallback_location: 'terms'
+  end
+
+  def explore
+    @terms = Term.order(created_at: :desc).first(20)
+    @category_names = Category.get_names
   end
 
   private

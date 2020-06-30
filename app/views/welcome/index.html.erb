@@ -2,7 +2,15 @@
   <div>
     <h1>Welcome to the Wordy App!</h1>
   </div>
-  <div>
-    <%= link_to 'Get all your new vocabulary!', terms_path %>
-  </div>
 </header>
+<div class="welcome-menu">
+  <div>
+    <%= link_to 'Add new vocabulary!', terms_path, class: 'complete-btn' %>
+  </div>
+  <div>
+    <%= link_to 'Review your vocabulary!', learning_path, class: 'complete-btn' %>
+  </div>
+  <div>
+    <%= link_to 'Explore all your vocabulary!', explore_path, class: 'complete-btn' %>
+  </div>
+</div>
