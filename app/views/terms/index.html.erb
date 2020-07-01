@@ -6,7 +6,7 @@
 </header>
 
 <div class="header">
-  <%= form_with model: @term do |f| %>
+  <%= form_with model: @term, class: "wordy-form" do |f| %>
     <%= f.text_field :term_text %>
     <div class="select">
       <%= f.collection_select(:category_id, Category.all, :id, :name,

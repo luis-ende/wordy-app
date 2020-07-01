@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   root 'welcome#index'
 
   get 'learning', to: 'terms#learning'
   get 'explore', to: 'terms#explore'
   post 'toggle_term_learning', to: 'terms#toggle_learning'
 
+  resources :users
+  resource :session, only: %i[new create destroy]
   resources :terms, except: [:new]
   resources :categories, except: [:new]
 end

@@ -1,0 +1,17 @@
+
+  <ul class="users-menu">
+    <% if logged_in? %>
+      <li>
+        <%= "Hello #{current_user.name}! | " %>
+        <%= link_to 'Logout', session_path, method: :delete %>
+      </li>
+      </div>
+    <% else %>
+      <li>
+        <%= link_to 'Sign Up', new_user_path %>
+      </li>
+      <li>
+        <%= link_to 'Log In', new_session_path %>
+      </li>
+    <% end %>
+  </ul>

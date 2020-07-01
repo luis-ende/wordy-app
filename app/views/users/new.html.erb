@@ -1,0 +1,31 @@
+<%= form_with model: @user, local: true, class: "users-form" do |f| %>
+  <h2>Sign Up</h2>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, 'error') %> prohibited this user from signing up:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <%= f.text_field :name, class: 'input-field', placeholder: 'User Name' %>
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-envelope icon"></i>
+    <%= f.email_field :email, class: 'input-field', placeholder: 'E-Mail' %>
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <%= f.password_field :password, class: 'input-field', placeholder: 'Password' %>
+  </div>
+
+    <%= f.submit 'Register', class: 'btn' %>
+<% end %>
