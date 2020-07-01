@@ -1,0 +1,52 @@
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <%= link_to 'Wordy', root_path, class: "w3-bar-item w3-button w3-padding-large w3-white" %>
+    <%= link_to terms_path, class: "w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" do %>
+      <i class="fas fa-plus"></i> Add vocabulary
+    <% end %>
+    <%= link_to learning_path, class: "w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" do %>
+      <i class="fas fa-check-double"></i> Review vocabulary
+    <% end %>
+    <%= link_to explore_path, class: "w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" do %>
+      <i class="fas fa-search"></i> Explore vocabulary
+    <% end %>
+    <% if logged_in? %>
+      <%= link_to 'Logout', session_path, method: :delete, class: "w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" %>
+    <% else %>
+      <%= link_to 'Sign Up', new_user_path, class: "w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" %>
+      <%= link_to 'Log In', new_session_path, class: "w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" %>
+    <% end %>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <%= link_to terms_path, class: "w3-bar-item w3-button w3-padding-large" do %>
+      <i class="fas fa-plus"></i> Add vocabulary
+    <% end %>
+    <%= link_to learning_path, class: "w3-bar-item w3-button w3-padding-large" do %>
+      <i class="fas fa-check-double"></i> Review vocabulary
+    <% end %>
+    <%= link_to explore_path, class: "w3-bar-item w3-button w3-padding-large" do %>
+      <i class="fas fa-search"></i> Explore vocabulary
+    <% end %>
+    <% if logged_in? %>
+      <%= link_to 'Logout', session_path, method: :delete, class: "w3-bar-item w3-button w3-padding-large w3-hover-white" %>
+    <% else %>
+      <%= link_to 'Sign Up', new_user_path, class: "w3-bar-item w3-button w3-padding-large" %>
+      <%= link_to 'Log In', new_session_path, class: "w3-bar-item w3-button w3-padding-large" %>
+    <% end %>
+  </div>
+</div>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>

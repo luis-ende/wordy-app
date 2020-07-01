@@ -1,16 +1,6 @@
 <div class="header">
-  <h1>Last added terms</h1>
-  <%= form_with model: @term, class: "wordy-form" do |f| %>
-    <%= f.text_field :term_text %>
-    <div class="select">
-      <%= f.collection_select(:category_id, Category.all, :id, :name,
-                               selected: @default_category_id,
-                               class: 'select') %>
-    </div>
-    <%= f.button :button, type: :submit, class: 'item-button' do %>
-      <i class="fas fa-plus-square"></i>
-    <% end %>
-  <% end %>
+  <h1>Add new vocabulary</h1>
+  <%= render 'edit_form' %>
 </div>
 
 <%= render 'list' %>

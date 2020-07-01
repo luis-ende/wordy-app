@@ -4,25 +4,11 @@ a {
 }
 
 .wordy-form {
-  min-height: 20vh;
+  max-width:500px;
+  margin:auto;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-form input, form button {
-  padding: 0.5rem;
-  font-size: 2rem;
-}
-
-form button {
-  color: #d88771;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-form button:hove {
-  background: #d88771;
 }
 
 .item-container {
@@ -109,36 +95,33 @@ select {
   -moz-appearance: none;
   appearance: none;
   outline: none;
-  border: none;
+  border: 2px solid #f44336;
 }
 
 .select {
   margin: 1rem;
   position: relative;
   overflow: hidden;
+  min-width: 170px;
+  text-align: left;
 }
 
 select {
-  color: #ff6f47;
+  color: #f44336;
   width: 10rem;
   cursor: pointer;
-  padding: 1rem;
+  padding: 0.7rem;
 }
 
 .select::after {
   content: "\25BC";
   position: absolute;
-  background: #ff6f47;
+  background: #f44336;
   top: 0;
   right: 0;
   padding: 1rem;
   pointer-events: none;
   transition: all 0.3s ease
-}
-
-.select:hover::after {
-  background: white;
-  color: #ff6f47;
 }
 
 .welcome-menu {
@@ -165,6 +148,7 @@ select {
   overflow: hidden;
   background-color: #333;
   padding: 0 100px 0 100px;
+  margin-top: 50px;
 }
 
 #navbar a {
@@ -220,6 +204,7 @@ select {
  text-align: center;
  transition: transform 0.8s;
  transform-style: preserve-3d;
+ box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */

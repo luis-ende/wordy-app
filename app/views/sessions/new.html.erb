@@ -4,7 +4,7 @@
 <%= form_with url: session_path, class: "users-form" do |f| %>
   <div class="input-container">
     <i class="fa fa-envelope icon"></i>
-    <%= f.email_field :email, class: 'input-field', placeholder: 'E-Mail' %>
+    <%= f.email_field :email, class: 'input-field', placeholder: 'E-Mail', autofocus: true %>
   </div>
 
   <div class="input-container">

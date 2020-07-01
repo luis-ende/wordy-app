@@ -1,9 +1,4 @@
 <div class="header">
   <h1>Edit Category</h1>
-</div>
-<%= form_with model: @category, class: "wordy-form" do |f| %>
-  <%= f.text_field :name %>
-  <%= f.button :button, type: :submit, class: 'item-button' do %>
-    <i class="fas fa-save"></i>
-  <% end %>
-<% end %>
+  <%= render 'edit_form' %>
+<div>

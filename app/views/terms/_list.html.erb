@@ -2,7 +2,7 @@
   <a id="defaultOpen" class="tablinks" href="javascript:void(0)"
      onclick="openCategory(event, 'All')">All</a>
   <% @category_names.each do |id, name| %>
-    <a class="tablinks" href="javascript:void(0)"
+    <a id=id class="tablinks" href="javascript:void(0)"
        onclick="openCategory(event, <%= "'#{name}'" %>)"><%= name %></a>
   <% end %>
 </div>

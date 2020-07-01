@@ -34,8 +34,8 @@
 }
 
 .icon {
-  padding: 20px;
-  background: rgb(73, 204, 73);
+  padding: 30px;
+  background: #f44336;
   color: white;
   min-width: 50px;
   text-align: center;
@@ -48,12 +48,12 @@
 }
 
 .input-field:focus {
-  border: 2px solid rgb(73, 204, 73);
+  border: 2px solid #f44336;
 }
 
 /* Set a style for the submit button */
 .btn {
-  background-color: rgb(73, 204, 73);
+  background-color: #f44336;
   color: white;
   padding: 15px 20px;
   border: none;

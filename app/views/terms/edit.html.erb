@@ -1,13 +1,4 @@
 <div class="header">
   <h1>Edit Term</h1>
+  <%= render 'edit_form' %>
 </div>
-<%= form_with model: @term, class: "wordy-form" do |f| %>
-  <%= f.text_field :term_text %>
-  <div class="select">
-    <%= f.collection_select(:category_id, Category.all, :id, :name,
-                             class: 'select') %>
-  </div>
-  <%= f.button :button, type: :submit, class: 'item-button' do %>
-    <i class="fas fa-save"></i>
-  <% end %>
-<% end %>
