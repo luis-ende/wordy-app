@@ -1,11 +1,5 @@
-<header>
-  <h1>Last added terms</h1>
-  <%= link_to learning_path, class: "complete-btn" do %>
-    <i class="fas fa-check-double"></i> Review your vocabulary
-  <% end %>
-</header>
-
 <div class="header">
+  <h1>Last added terms</h1>
   <%= form_with model: @term, class: "wordy-form" do |f| %>
     <%= f.text_field :term_text %>
     <div class="select">

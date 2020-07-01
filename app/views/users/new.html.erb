@@ -1,5 +1,7 @@
-<%= form_with model: @user, local: true, class: "users-form" do |f| %>
+<div class="header">
   <h2>Sign Up</h2>
+</div>
+<%= form_with model: @user, local: true, class: "users-form" do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, 'error') %> prohibited this user from signing up:</h2>

@@ -1,5 +1,7 @@
-<%= form_with url: session_path, class: "users-form" do |f| %>
+<div class="header">
   <h2>Log In</h2>
+</div>
+<%= form_with url: session_path, class: "users-form" do |f| %>
   <div class="input-container">
     <i class="fa fa-envelope icon"></i>
     <%= f.email_field :email, class: 'input-field', placeholder: 'E-Mail' %>
