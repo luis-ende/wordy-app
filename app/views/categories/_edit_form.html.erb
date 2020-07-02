@@ -1,14 +1,11 @@
 <div class="input-container">
+  <% is_new_term = !@category.id %>
   <%= form_with model: @category, class: "wordy-form" do |f| %>
     <%= f.text_field :name, class: 'input-field', placeholder: 'Enter category name',
                             style: 'margin-right: 15px',
                             autofocus: true %>
     <%= f.button :button, type: :submit, class: 'btn' do %>
-      <% if not @category.id %>
-        <i class="fas fa-plus-square"></i>
-      <% else %>
-        <i class="fas fa-save"></i>
-      <% end %>
+      <i class="fas <%= is_new_term ? 'fa-plus' : 'fa-save' %>"></i>
     <% end %>
   <% end %>
 </div>

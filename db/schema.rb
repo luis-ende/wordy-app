@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_30_170959) do
+ActiveRecord::Schema.define(version: 2020_07_02_163327) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_06_30_170959) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "learning", default: true
     t.datetime "learning_updated"
+    t.string "translation"
     t.index ["category_id"], name: "index_terms_on_category_id"
   end
 

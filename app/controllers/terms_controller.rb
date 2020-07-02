@@ -60,6 +60,6 @@ class TermsController < ApplicationController
   private
 
   def term_params
-    params.require(:term).permit(:term_text, :category_id)
+    params.require(:term).permit(:term_text, :category_id, :translation)
   end
 end

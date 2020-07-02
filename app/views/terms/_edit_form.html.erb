@@ -1,10 +1,11 @@
 <div class="input-container">
+  <% is_new_term = !@term.id %>
   <%= form_with model: @term, class: "wordy-form" do |f| %>
     <%= f.text_field :term_text, class: 'input-field',
                                  placeholder: 'Enter word / expression',
                                  autofocus: true %>
     <div class="select">
-      <% if defined?@default_category_id %>
+      <% if is_new_term %>
         <%= f.collection_select(:category_id, Category.all, :id, :name,
                                  selected: @default_category_id,
                                  class: 'select') %>
@@ -13,8 +14,12 @@
                                  class: 'select') %>
       <% end %>
     </div>
+    <% if not is_new_term %>
+      <%= f.text_field :translation, class: 'input-field',
+                       placeholder: 'Enter translation' %>
+    <% end %>
     <%= f.button :button, type: :submit, class: 'btn' do %>
-      <i class="fas fa-plus"></i>
+      <i class="fas <%= is_new_term ? 'fa-plus' : 'fa-save' %>"></i>
     <% end %>
   <% end %>
 </div>
