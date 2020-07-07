@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path, notice: 'Thank you for signing up!'
     else
-      render new
+      render :new
     end
   end
 

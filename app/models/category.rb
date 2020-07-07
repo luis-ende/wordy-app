@@ -1,5 +1,6 @@
 class Category < ApplicationRecord
   has_many :terms
+  validates :name, presence: true
 
   def self.get_default_category
     def_cat = find_by name: 'Default'
