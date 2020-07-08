@@ -14,7 +14,7 @@
            <h1><%= lt.category.name %></h1>
            <p><%= lt.term_text %>: <%= lt.translation %></p>
            <%= link_to toggle_term_learning_path(term_id: lt.id),
-                      method: :post, class: 'learning-do-btn' do %>
+                      method: :post, class: 'learning-do-btn learning-card-do-btn' do %>
              Learned!
              <i class="fas fa-check-double"></i>
            <% end %>

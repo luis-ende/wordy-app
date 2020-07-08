@@ -14,7 +14,7 @@ a {
 .item-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .item-list {
@@ -26,7 +26,7 @@ a {
   margin: 0.5rem;
   background: white;
   color: black;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,8 +47,8 @@ a {
 .go-btn,
 .learning-do-btn,
 .learning-done-btn {
-  background: #ff6f47;
-  color: white;
+  /* background: #ff6f47; */
+  color: gray;
   border: none;
   padding: 1rem;
   cursor: pointer;
@@ -56,19 +56,25 @@ a {
 }
 
 .complete-btn {
-  background: rgb(73, 204, 73);
+  /* background: rgb(73, 204, 73); */
 }
 
 .go-btn {
-  background: rgb(204, 158, 73);
+  /* background: rgb(204, 158, 73); */
 }
 
 .learning-done-btn {
-  background: green;
+  /* background: green; */
+  color: green;
 }
 
 .learning-do-btn {
-  background: red;
+  /* background: red; */
+  color: red;
+}
+
+.learning-card-do-btn {
+  background-color: white;
 }
 
 .list-item {
@@ -142,6 +148,7 @@ select {
 .header {
   text-align: center;
   margin-top: 80px;
+  margin-bottom: 40px;
 }
 
 #navbar {
