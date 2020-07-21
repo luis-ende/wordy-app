@@ -8,6 +8,7 @@ class TermsController < ApplicationController
 
   def edit
     @term = Term.find(params[:id])
+    @example = Example.new
   end
 
   def create

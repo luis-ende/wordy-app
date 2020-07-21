@@ -1,4 +1,5 @@
 class Term < ApplicationRecord
+  has_many :examples, dependent: :destroy
   belongs_to :category
   before_save :set_default_values
   validates :term_text, presence: true

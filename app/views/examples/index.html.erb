@@ -1,0 +1,10 @@
+<div class="header">
+  <h1>All examples</h1>
+  <ul>
+    <% @examples.each do |example| %>
+      <li>
+        <%= "#{example.term.term_text} - #{example.sentence}" %>
+      </li>
+    <% end %>
+  </ul>
+</div>

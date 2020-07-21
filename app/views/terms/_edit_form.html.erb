@@ -18,8 +18,11 @@
       <%= f.text_field :translation, class: 'input-field',
                        placeholder: 'Enter translation' %>
     <% end %>
-    <%= f.button :button, type: :submit, class: 'btn' do %>
+    <%= f.button :button, type: :submit, class: 'wordy-btn' do %>
       <i class="fas <%= is_new_term ? 'fa-plus' : 'fa-save' %>"></i>
     <% end %>
   <% end %>
 </div>
+<% if not is_new_term %>
+  <%= render 'examples/list_term_examples' %>
+<% end %>

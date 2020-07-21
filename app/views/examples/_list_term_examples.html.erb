@@ -1,0 +1,26 @@
+<h2>Examples</h2>
+<%= form_with model: @example, class: "wordy-form" do |f| %>
+  <%= f.text_field :sentence, class: 'input-field',
+                               placeholder: 'Enter new example for this term' %>
+  <%= f.hidden_field :term_id, :value => @term.id %>
+  <%= f.button :button, type: :submit, class: 'wordy-btn' do %>
+    <i class="fas fa-plus"></i>
+  <% end %>
+<% end %>
+<div class="item-container">
+  <ul class="item-list">
+    <% @term.examples.each do |example| %>
+      <div class="item">
+
+        <li class="list-item">
+          <%= example.sentence %>
+        </li>
+        <%= link_to example_path(example), method: :delete,
+                                        class: "trash-btn",
+                                        data: { confirm: "Are you sure?" } do %>
+            <i class="fas fa-trash"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </ul>
+</div>

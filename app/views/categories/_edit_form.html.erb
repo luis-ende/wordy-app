@@ -4,7 +4,7 @@
     <%= f.text_field :name, class: 'input-field', placeholder: 'Enter category name',
                             style: 'margin-right: 15px',
                             autofocus: true %>
-    <%= f.button :button, type: :submit, class: 'btn' do %>
+    <%= f.button :button, type: :submit, class: 'wordy-btn' do %>
       <i class="fas <%= is_new_term ? 'fa-plus' : 'fa-save' %>"></i>
     <% end %>
   <% end %>

@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resource :session, only: %i[new create destroy]
   resources :terms, except: [:new]
   resources :categories, except: [:new]
+  resources :examples, except: [:new]
 end
