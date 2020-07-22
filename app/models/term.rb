@@ -4,6 +4,8 @@ class Term < ApplicationRecord
   before_save :set_default_values
   validates :term_text, presence: true
 
+  Gutentag::ActiveRecord.call self
+
   def set_default_values
     if not self.learning_updated
       self.learning_updated = DateTime.now
