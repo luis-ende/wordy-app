@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'learning', to: 'terms#learning'
   get 'explore', to: 'terms#explore'
   post 'toggle_term_learning', to: 'terms#toggle_learning'
+  patch 'update_term_tags', to: 'terms#update_tags'
 
   resources :users
   resource :session, only: %i[new create destroy]

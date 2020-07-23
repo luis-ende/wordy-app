@@ -1,4 +1,8 @@
 <h2>Tags</h2>
-<form>
-  <div id="sample"></div>
-</form>
+<%= form_with model: @term, url: update_term_tags_path(term_id: @term.id) do |f| %>
+  <% tags_array = Gutentag::Tag.all.collect { |tag| [tag.name, tag.name] } %>
+  <%= select_tag(:tag_names, options_for_select(tags_array, @term.tag_names), {
+                  multiple: true,
+                  class: 'tags-control',
+                  onchange: 'this.form.submit();'}) %>
+<% end %>
