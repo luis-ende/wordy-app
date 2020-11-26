@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_07_22_145536) do
   end
 
   create_table "examples", force: :cascade do |t|
-    t.integer "term_id"
+    t.bigint "term_id"
     t.text "sentence"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_07_22_145536) do
 
   create_table "terms", force: :cascade do |t|
     t.text "term_text"
-    t.integer "category_id", null: false
+    t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "learning", default: true

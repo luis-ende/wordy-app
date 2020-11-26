@@ -1,0 +1,26 @@
+<div class="header">
+  <h1>Search terms</h1>
+</div>
+<div class="item-container">
+  <div class="search-nav">
+    <div class="search-box">
+      <%= form_tag search_tag_path, remote: true, method: :get do %>
+        <span class="search-icon">
+          <i class="fas fa-search"></i>
+        </span>
+        <%= text_field_tag :tag, nil, placeholder: "Search tag", autofocus: true, class: "search-input" %>
+        <%= submit_tag "Search" %>
+      <% end %>
+      <div id="tags_filter">
+      </div>
+    </div>
+  </div>
+  <div class="search-content">
+  </div>
+</div>
+
+<script>
+  $('.search-input').keyup(e) {
+    alert('input!')
+  }
+</script>

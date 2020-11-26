@@ -55,12 +55,16 @@ class TermsController < ApplicationController
 
   def update_tags
     term = Term.find(params[:term_id])
-    term.update(tag_names: params[:tag_names])    
+    term.update(tag_names: params[:tag_names])
   end
 
   def explore
     @terms = Term.order(created_at: :desc).first(20)
     @category_names = Category.get_names
+  end
+
+  def search
+    
   end
 
   private

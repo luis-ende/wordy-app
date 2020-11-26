@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'learning', to: 'terms#learning'
   get 'explore', to: 'terms#explore'
+  get 'search', to: 'terms#search'
+  get 'search_tag', to: 'tags#search'
   post 'toggle_term_learning', to: 'terms#toggle_learning'
   patch 'update_term_tags', to: 'terms#update_tags'
 
