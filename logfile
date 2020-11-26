@@ -5,3 +5,13 @@
 2020-11-24 20:26:11.443 CST [7048] LOG:  database system was shut down at 2020-11-24 20:25:46 CST
 2020-11-24 20:26:11.449 CST [7047] LOG:  database system is ready to accept connections
 2020-11-24 20:26:33.397 CST [7064] FATAL:  database "myapp_psql_development" does not exist
+2020-11-26 10:10:23.441 CST [31230] LOG:  starting PostgreSQL 13.1 on x86_64-apple-darwin20.1.0, compiled by Apple clang version 12.0.0 (clang-1200.0.32.27), 64-bit
+2020-11-26 10:10:23.443 CST [31230] LOG:  listening on IPv6 address "::1", port 5432
+2020-11-26 10:10:23.443 CST [31230] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-11-26 10:10:23.445 CST [31230] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-11-26 10:10:23.459 CST [31231] LOG:  database system was interrupted; last known up at 2020-11-25 19:36:07 CST
+2020-11-26 10:10:23.745 CST [31231] LOG:  database system was not properly shut down; automatic recovery in progress
+2020-11-26 10:10:23.752 CST [31231] LOG:  redo starts at 0/1647D60
+2020-11-26 10:10:23.752 CST [31231] LOG:  invalid record length at 0/1647E48: wanted 24, got 0
+2020-11-26 10:10:23.752 CST [31231] LOG:  redo done at 0/1647E10
+2020-11-26 10:10:23.769 CST [31230] LOG:  database system is ready to accept connections
